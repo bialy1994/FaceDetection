@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceDetection", "FaceDetection\FaceDetection.csproj", "{16334B7D-15EF-4EC3-9785-E97AD0235EA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceDetection", "FaceDetection.csproj", "{B2C15B1D-BF04-4CBC-AF22-0ECF38591B09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{16334B7D-15EF-4EC3-9785-E97AD0235EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16334B7D-15EF-4EC3-9785-E97AD0235EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16334B7D-15EF-4EC3-9785-E97AD0235EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16334B7D-15EF-4EC3-9785-E97AD0235EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C15B1D-BF04-4CBC-AF22-0ECF38591B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C15B1D-BF04-4CBC-AF22-0ECF38591B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C15B1D-BF04-4CBC-AF22-0ECF38591B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C15B1D-BF04-4CBC-AF22-0ECF38591B09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

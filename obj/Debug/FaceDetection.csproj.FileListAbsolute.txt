@@ -1,0 +1,43 @@
+C:\Emgu\emgucv-windesktop 3.1.0.2282\bin\haarcascade_eye.xml
+C:\Emgu\emgucv-windesktop 3.1.0.2282\bin\haarcascade_frontalface_default.xml
+C:\Emgu\emgucv-windesktop 3.1.0.2282\bin\lena.jpg
+C:\Emgu\emgucv-windesktop 3.1.0.2282\bin\Example.FaceDetection.exe
+C:\Emgu\emgucv-windesktop 3.1.0.2282\bin\Example.FaceDetection.pdb
+C:\Emgu\emgucv-windesktop 3.1.0.2282\Emgu.CV.Example\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
+C:\Emgu\emgucv-windesktop 3.1.0.2282\Emgu.CV.Example\FaceDetection\obj\Debug\Example.FaceDetection.exe
+C:\Emgu\emgucv-windesktop 3.1.0.2282\Emgu.CV.Example\FaceDetection\obj\Debug\Example.FaceDetection.pdb
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\Projects\FaceDetection\obj\Debug\Example.FaceDetection.exe
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\Projects\FaceDetection\obj\Debug\Example.FaceDetection.pdb
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\Projects\FaceDetection\obj\Debug\FaceDetection.MainForm.resources
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\Projects\FaceDetection\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\bin\Example.FaceDetection.exe
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\bin\Example.FaceDetection.pdb
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\bin\haarcascade_eye.xml
+C:\Users\Michał Białuski\Documents\Visual Studio 2015\bin\haarcascade_frontalface_default.xml
+F:\bin\Example.FaceDetection.exe
+F:\bin\Example.FaceDetection.pdb
+F:\INŻYNIERKA\FaceDetection\obj\Debug\FaceDetection.MainForm.resources
+F:\INŻYNIERKA\FaceDetection\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+F:\INŻYNIERKA\FaceDetection\obj\Debug\Example.FaceDetection.exe
+F:\INŻYNIERKA\FaceDetection\obj\Debug\Example.FaceDetection.pdb
+F:\bin\Cascades\haarcascade_eye.xml
+F:\bin\Cascades\haarcascade_frontalface_default.xml
+F:\INŻYNIERKA\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
+F:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.exe
+F:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.pdb
+F:\INŻYNIERKA\bin\Cascades\haarcascade_eye.xml
+F:\INŻYNIERKA\bin\Cascades\haarcascade_frontalface_default.xml
+F:\INŻYNIERKA\bin\Example.FaceDetection.exe
+F:\INŻYNIERKA\bin\Example.FaceDetection.pdb
+F:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
+F:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.MainForm.resources
+F:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+G:\INŻYNIERKA\bin\Cascades\haarcascade_eye.xml
+G:\INŻYNIERKA\bin\Cascades\haarcascade_frontalface_default.xml
+G:\INŻYNIERKA\bin\Example.FaceDetection.exe
+G:\INŻYNIERKA\bin\Example.FaceDetection.pdb
+G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
+G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.MainForm.resources
+G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.exe
+G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.pdb

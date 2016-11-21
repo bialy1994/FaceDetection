@@ -2,15 +2,7 @@
 {
 	partial class MainForm
 	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
@@ -20,96 +12,90 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
-
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.checkFile = new System.Windows.Forms.CheckBox();
-			this.checkCam = new System.Windows.Forms.CheckBox();
-			this.buttonStartDetection = new System.Windows.Forms.Button();
-			this.buttonOpenFile = new System.Windows.Forms.Button();
-			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.SuspendLayout();
+			pictureBox1 = new System.Windows.Forms.PictureBox();
+			checkFile = new System.Windows.Forms.CheckBox();
+			checkCam = new System.Windows.Forms.CheckBox();
+			buttonStartDetection = new System.Windows.Forms.Button();
+			buttonOpenFile = new System.Windows.Forms.Button();
+			openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+			SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(640, 480);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			pictureBox1.Location = new System.Drawing.Point(13, 13);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new System.Drawing.Size(320, 240);
+			pictureBox1.TabIndex = 0;
+			pictureBox1.TabStop = false;
 			// 
 			// checkFile
 			// 
-			this.checkFile.AutoSize = true;
-			this.checkFile.Location = new System.Drawing.Point(13, 499);
-			this.checkFile.Name = "checkFile";
-			this.checkFile.Size = new System.Drawing.Size(91, 17);
-			this.checkFile.TabIndex = 1;
-			this.checkFile.Text = "Read from file";
-			this.checkFile.UseVisualStyleBackColor = true;
+			checkFile.AutoSize = true;
+			checkFile.Location = new System.Drawing.Point(13, 259);
+			checkFile.Name = "checkFile";
+			checkFile.Size = new System.Drawing.Size(91, 17);
+			checkFile.TabIndex = 1;
+			checkFile.Text = "Read from file";
+			checkFile.UseVisualStyleBackColor = true;
+			checkFile.CheckedChanged += new System.EventHandler(checkFile_CheckedChanged);
 			// 
 			// checkCam
 			// 
-			this.checkCam.AutoSize = true;
-			this.checkCam.Location = new System.Drawing.Point(13, 522);
-			this.checkCam.Name = "checkCam";
-			this.checkCam.Size = new System.Drawing.Size(121, 17);
-			this.checkCam.TabIndex = 2;
-			this.checkCam.Text = "Read from web cam";
-			this.checkCam.UseVisualStyleBackColor = true;
-			this.checkCam.CheckedChanged += new System.EventHandler(this.checkCam_CheckedChanged);
+			checkCam.AutoSize = true;
+			checkCam.Location = new System.Drawing.Point(13, 282);
+			checkCam.Name = "checkCam";
+			checkCam.Size = new System.Drawing.Size(121, 17);
+			checkCam.TabIndex = 2;
+			checkCam.Text = "Read from web cam";
+			checkCam.UseVisualStyleBackColor = true;
+			checkCam.CheckedChanged += new System.EventHandler(checkCam_CheckedChanged);
 			// 
 			// buttonStartDetection
 			// 
-			this.buttonStartDetection.Location = new System.Drawing.Point(556, 516);
-			this.buttonStartDetection.Name = "buttonStartDetection";
-			this.buttonStartDetection.Size = new System.Drawing.Size(97, 23);
-			this.buttonStartDetection.TabIndex = 3;
-			this.buttonStartDetection.Text = "Start detection";
-			this.buttonStartDetection.UseVisualStyleBackColor = true;
-			this.buttonStartDetection.Click += new System.EventHandler(this.buttonStartDetection_Click);
+			buttonStartDetection.Location = new System.Drawing.Point(236, 276);
+			buttonStartDetection.Name = "buttonStartDetection";
+			buttonStartDetection.Size = new System.Drawing.Size(97, 23);
+			buttonStartDetection.TabIndex = 3;
+			buttonStartDetection.Text = "Start detection";
+			buttonStartDetection.UseVisualStyleBackColor = true;
+			buttonStartDetection.Click += new System.EventHandler(buttonStartDetection_Click);
 			// 
 			// buttonOpenFile
 			// 
-			this.buttonOpenFile.Location = new System.Drawing.Point(159, 516);
-			this.buttonOpenFile.Name = "buttonOpenFile";
-			this.buttonOpenFile.Size = new System.Drawing.Size(75, 23);
-			this.buttonOpenFile.TabIndex = 4;
-			this.buttonOpenFile.Text = "Open file";
-			this.buttonOpenFile.UseVisualStyleBackColor = true;
-			this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
+			buttonOpenFile.Location = new System.Drawing.Point(155, 276);
+			buttonOpenFile.Name = "buttonOpenFile";
+			buttonOpenFile.Size = new System.Drawing.Size(75, 23);
+			buttonOpenFile.TabIndex = 4;
+			buttonOpenFile.Text = "Open file";
+			buttonOpenFile.UseVisualStyleBackColor = true;
+			buttonOpenFile.Click += new System.EventHandler(buttonOpenFile_Click);
+			buttonOpenFile.Enabled = false;
 			// 
 			// openFileDialog
 			// 
-			this.openFileDialog.FileName = "File";
+			openFileDialog.FileName = "File";
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(664, 547);
-			this.Controls.Add(this.buttonOpenFile);
-			this.Controls.Add(this.buttonStartDetection);
-			this.Controls.Add(this.checkCam);
-			this.Controls.Add(this.checkFile);
-			this.Controls.Add(this.pictureBox1);
-			this.Name = "MainForm";
-			this.Text = "Face detection";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+			AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			ClientSize = new System.Drawing.Size(344, 309);
+			Controls.Add(buttonOpenFile);
+			Controls.Add(buttonStartDetection);
+			Controls.Add(checkCam);
+			Controls.Add(checkFile);
+			Controls.Add(pictureBox1);
+			Name = "MainForm";
+			Text = "Face detection";
+			((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
 
 		}
-
-		#endregion
 
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.CheckBox checkFile;
