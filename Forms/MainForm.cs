@@ -32,7 +32,7 @@ namespace FaceDetection
 			var frame = new Mat();
 			_capture.Retrieve(frame, 0);
 			if(_detect)
-				pictureBox.Image = DetectFace.Detect(frame);
+				pictureBox.Image = DetectFace.Detect(frame, eyesCheckBox.Checked, mouthCheckBox.Checked, noseCheckBox.Checked);
 			else
 				pictureBox.Image = frame;
 		}
@@ -87,10 +87,18 @@ namespace FaceDetection
 
 		private void detectButton_Click(object sender, EventArgs e)
 		{
-			if (loadFileCheckBox.Checked)
-				pictureBox.Image = DetectFace.Detect((Mat) pictureBox.Image);
+			if (pictureBox.Image == null)
+				return;
+
+			_detect = !_detect;
+			if (_detect)
+			{
+				detectButton.Text = "Stop detection";
+			}
 			else
-				_detect = true;
+			{
+				detectButton.Text = "Start detection";
+			}
 		}
 	}
 }

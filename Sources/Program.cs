@@ -1,14 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
-using Emgu.CV.UI;
-using Emgu.CV.Cuda;
 
 namespace FaceDetection
 {

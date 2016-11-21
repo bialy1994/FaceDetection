@@ -85,7 +85,6 @@
     </Compile>
     <Compile Include="Sources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\WebCam.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cascades\haarcascade_eye.xml">
@@ -94,6 +93,9 @@
     <Content Include="Cascades\haarcascade_frontalface_default.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Cascades\haarcascade_mouth.xml" />
+    <Content Include="Cascades\haarcascade_nose.xml" />
+    <Content Include="Cascades\haarcascade_profil_face.xml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />

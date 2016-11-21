@@ -8,55 +8,78 @@ namespace FaceDetection.Sources
 {
 	class DetectFace
 	{
-		private const string faceFileName = "Cascades/haarcascade_frontalface_default.xml";
-		private const string eyeFileName = "Cascades/haarcascade_eye.xml";
+		private const string FrontalFaceFileName = "Cascades/haarcascade_frontalface_default.xml";
+		private const string ProfilFaceFileName = "Cascades/haarcascade_profil_face.xml";
+		private const string EyeFileName = "Cascades/haarcascade_eye.xml";
+		private const string MouthFileName = "Cascades/haarcascade_mouth.xml";
+		private const string NoseFileName = "Cascades/haarcascade_nose.xml";
 
-		public static Mat Detect(Mat image)
+
+		public static Mat Detect(Mat image, bool detectEyes = false, bool detectMouth = false, bool detectNose = false)
 		{
 			var faces = new List<Rectangle>();
-			var eyes = new List<Rectangle>();
-			using (var face = new CascadeClassifier(faceFileName))
-			using (var eye = new CascadeClassifier(eyeFileName))
+			var ugray = new UMat();
+			using (var face = new CascadeClassifier(FrontalFaceFileName))
 			{
-				using (var ugray = new UMat())
-				{
-					CvInvoke.CvtColor(image, ugray, ColorConversion.Bgr2Gray);
-
-					CvInvoke.EqualizeHist(ugray, ugray);
-					var facesDetected = face.DetectMultiScale(
+				CvInvoke.CvtColor(image, ugray, ColorConversion.Bgr2Gray);
+				CvInvoke.EqualizeHist(ugray, ugray);
+				Rectangle[] facesDetected = face.DetectMultiScale(
 						ugray,
 						1.1,
 						10,
 						new Size(20, 20));
-
 					faces.AddRange(facesDetected);
+			}
+			foreach (var face in faces)
+				CvInvoke.Rectangle(image, face, new Bgr(Color.Red).MCvScalar, 3);
+			if (detectEyes)
+			{
+				var eyes = new List<Rectangle>();
+				DetectItem(faces, ugray, eyes, EyeFileName);
+				foreach (var eye in eyes)
+					CvInvoke.Rectangle(image, eye, new Bgr(Color.Blue).MCvScalar, 3);
+			}
+			if (detectMouth)
+			{
+				var mouth = new List<Rectangle>();
+				DetectItem(faces, ugray, mouth, MouthFileName);
+				foreach (var m in mouth)
+					CvInvoke.Rectangle(image, m, new Bgr(Color.Green).MCvScalar, 3);
+			}
+			if (detectNose)
+			{
+				var noses = new List<Rectangle>();
+				DetectItem(faces, ugray, noses, NoseFileName);
+				foreach (var nose in noses)
+					CvInvoke.Rectangle(image, nose, new Bgr(Color.BlueViolet).MCvScalar, 3);
+			}
+			return image;
+		}
 
-					foreach (var f in facesDetected)
+		private static void DetectItem(IEnumerable<Rectangle> faces, UMat ugray, IList<Rectangle> list, string fileName)
+		{
+			using (var item = new CascadeClassifier(fileName))
+			{
+				foreach (var f in faces)
+				{
+					//Get the region of interest on the faces
+					using (var faceRegion = new UMat(ugray, f))
 					{
-						//Get the region of interest on the faces
-						using (var faceRegion = new UMat(ugray, f))
-						{
-							var eyesDetected = eye.DetectMultiScale(
-								faceRegion,
-								1.1,
-								10,
-								new Size(20, 20));
+						var itemsDetected = item.DetectMultiScale(
+							faceRegion,
+							1.1,
+							10,
+							new Size(20, 20));
 
-							foreach (var e in eyesDetected)
-							{
-								var eyeRect = e;
-								eyeRect.Offset(f.X, f.Y);
-								eyes.Add(eyeRect);
-							}
+						foreach (var i in itemsDetected)
+						{
+							var itemRect = i;
+							itemRect.Offset(f.X, f.Y);
+							list.Add(itemRect);
 						}
 					}
 				}
 			}
-			foreach (var face in faces)
-				CvInvoke.Rectangle(image, face, new Bgr(Color.Red).MCvScalar, 10);
-			foreach (var eye in eyes)
-				CvInvoke.Rectangle(image, eye, new Bgr(Color.Blue).MCvScalar, 10);
-			return image;
 		}
 	}
 }
