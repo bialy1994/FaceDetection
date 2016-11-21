@@ -5,8 +5,6 @@
 		private string fileName;
 		private const int pictureWidth = 320;
 		private const int pictureHeight = 240;
-		private bool detect = false;
-		private WebCam webcam;
 		private System.ComponentModel.IContainer components = null;
 		protected override void Dispose(bool disposing)
 		{
@@ -25,12 +23,10 @@
 			this.loadFileCheckBox = new System.Windows.Forms.CheckBox();
 			this.webcamCheckBox = new System.Windows.Forms.CheckBox();
 			this.openFileButton = new System.Windows.Forms.Button();
-			this.webcamConfigurationButton = new System.Windows.Forms.Button();
 			this.detectButton = new System.Windows.Forms.Button();
 			this.stopDetectionButton = new System.Windows.Forms.Button();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.pictureBox = new Emgu.CV.UI.ImageBox();
-			this.saveFileButton = new System.Windows.Forms.Button();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
 			this.SuspendLayout();
@@ -69,17 +65,6 @@
 			this.openFileButton.UseVisualStyleBackColor = true;
 			this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
 			// 
-			// webcamConfigurationButton
-			// 
-			this.webcamConfigurationButton.Enabled = false;
-			this.webcamConfigurationButton.Location = new System.Drawing.Point(134, 407);
-			this.webcamConfigurationButton.Name = "webcamConfigurationButton";
-			this.webcamConfigurationButton.Size = new System.Drawing.Size(107, 23);
-			this.webcamConfigurationButton.TabIndex = 4;
-			this.webcamConfigurationButton.Text = "Configure webcam";
-			this.webcamConfigurationButton.UseVisualStyleBackColor = true;
-			this.webcamConfigurationButton.Click += new System.EventHandler(this.webcamConfigurationButton_Click);
-			// 
 			// detectButton
 			// 
 			this.detectButton.Location = new System.Drawing.Point(562, 378);
@@ -111,26 +96,14 @@
 			this.pictureBox.TabIndex = 2;
 			this.pictureBox.TabStop = false;
 			// 
-			// saveFileButton
-			// 
-			this.saveFileButton.Location = new System.Drawing.Point(247, 378);
-			this.saveFileButton.Name = "saveFileButton";
-			this.saveFileButton.Size = new System.Drawing.Size(107, 23);
-			this.saveFileButton.TabIndex = 7;
-			this.saveFileButton.Text = "Save file";
-			this.saveFileButton.UseVisualStyleBackColor = true;
-			this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(773, 449);
-			this.Controls.Add(this.saveFileButton);
 			this.Controls.Add(this.pictureBox);
 			this.Controls.Add(this.stopDetectionButton);
 			this.Controls.Add(this.detectButton);
-			this.Controls.Add(this.webcamConfigurationButton);
 			this.Controls.Add(this.openFileButton);
 			this.Controls.Add(this.webcamCheckBox);
 			this.Controls.Add(this.loadFileCheckBox);
@@ -146,12 +119,10 @@
 		private System.Windows.Forms.CheckBox loadFileCheckBox;
 		private System.Windows.Forms.CheckBox webcamCheckBox;
 		private System.Windows.Forms.Button openFileButton;
-		private System.Windows.Forms.Button webcamConfigurationButton;
 		private System.Windows.Forms.Button detectButton;
 		private System.Windows.Forms.Button stopDetectionButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private Emgu.CV.UI.ImageBox pictureBox;
-		private System.Windows.Forms.Button saveFileButton;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 	}
 }
