@@ -15,11 +15,16 @@ namespace FaceDetection.Sources
 		private const string NoseFileName = "Cascades/haarcascade_nose.xml";
 
 
-		public static Mat Detect(Mat image, bool detectEyes = false, bool detectMouth = false, bool detectNose = false)
+		public static Mat Detect(Mat image, bool defaultAlgorithm = true, bool detectEyes = false, bool detectMouth = false, bool detectNose = false)
 		{
 			var faces = new List<Rectangle>();
 			var ugray = new UMat();
-			using (var face = new CascadeClassifier(FrontalFaceFileName))
+			var algorithm = "";
+			if (defaultAlgorithm)
+				algorithm = FrontalFaceFileName;
+			else
+				algorithm = ProfilFaceFileName;
+			using (var face = new CascadeClassifier(algorithm))
 			{
 				CvInvoke.CvtColor(image, ugray, ColorConversion.Bgr2Gray);
 				CvInvoke.EqualizeHist(ugray, ugray);

@@ -41,12 +41,12 @@ G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.MainForm.
 G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
 G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.exe
 G:\INŻYNIERKA\wersje\FaceDetection 14.11.2016\obj\Debug\Example.FaceDetection.pdb
-C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.exe
-C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.pdb
 C:\Users\Michał Białuski\Documents\bin\Cascades\haarcascade_eye.xml
 C:\Users\Michał Białuski\Documents\bin\Cascades\haarcascade_frontalface_default.xml
 C:\Users\Michał Białuski\Documents\bin\Example.FaceDetection.exe
 C:\Users\Michał Białuski\Documents\bin\Example.FaceDetection.pdb
-C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.MainForm.resources
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
+C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.exe
+C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.pdb
+C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache

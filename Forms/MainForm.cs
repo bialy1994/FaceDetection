@@ -32,7 +32,7 @@ namespace FaceDetection
 			var frame = new Mat();
 			_capture.Retrieve(frame, 0);
 			if(_detect)
-				pictureBox.Image = DetectFace.Detect(frame, eyesCheckBox.Checked, mouthCheckBox.Checked, noseCheckBox.Checked);
+				pictureBox.Image = DetectFace.Detect(frame, frontalFaceCheckBox.Checked, eyesCheckBox.Checked, mouthCheckBox.Checked, noseCheckBox.Checked);
 			else
 				pictureBox.Image = frame;
 		}
@@ -90,6 +90,18 @@ namespace FaceDetection
 			if (pictureBox.Image == null)
 				return;
 
+			if (!frontalFaceCheckBox.Checked && !profileFaceCheckBox.Checked)
+			{
+				MessageBox.Show("You have to chose any face detection algorithm");
+				return;
+			}
+
+			if (loadFileCheckBox.Checked)
+			{
+				pictureBox.Image = DetectFace.Detect((Mat)pictureBox.Image,frontalFaceCheckBox.Checked, eyesCheckBox.Checked,mouthCheckBox.Checked,noseCheckBox.Checked);
+				return;
+			}
+
 			_detect = !_detect;
 			if (_detect)
 			{
@@ -99,6 +111,18 @@ namespace FaceDetection
 			{
 				detectButton.Text = "Start detection";
 			}
+		}
+
+		private void frontalFaceCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+			if (frontalFaceCheckBox.Checked)
+				profileFaceCheckBox.Checked = false;
+		}
+
+		private void profileFaceCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+			if (profileFaceCheckBox.Checked)
+				frontalFaceCheckBox.Checked = false;
 		}
 	}
 }
