@@ -8,9 +8,10 @@ namespace FaceDetection
 {
 	public partial class MainForm : Form
 	{
-		private Capture _capture = null;
+		private readonly Capture _capture = null;
 		private bool _captureInProgress;
 		private bool _detect;
+		private int selectedAlgorithmIndex;
 
 		public MainForm()
 		{
@@ -25,16 +26,14 @@ namespace FaceDetection
 			{
 				MessageBox.Show(excpt.Message);
 			}
+			selectedAlgorithmIndex = algorithmComboBox.SelectedIndex;
 		}
 
 		private void ProcessFrame(object sender, EventArgs arg)
 		{
 			var frame = new Mat();
 			_capture.Retrieve(frame, 0);
-			if(_detect)
-				pictureBox.Image = DetectFace.Detect(frame, frontalFaceCheckBox.Checked, eyesCheckBox.Checked, mouthCheckBox.Checked, noseCheckBox.Checked);
-			else
-				pictureBox.Image = frame;
+			pictureBox.Image = _detect ? DetectFace.Detect(frame, selectedAlgorithmIndex, eyesCheckBox.Checked, mouthCheckBox.Checked, noseCheckBox.Checked) : frame;
 		}
 
 
@@ -44,6 +43,8 @@ namespace FaceDetection
 			{
 				webcamCheckBox.Checked = false;
 				openFileButton.Enabled = true;
+				detectButton.Text = "detect";
+				_detect = false;
 			}
 			else
 			{
@@ -57,6 +58,8 @@ namespace FaceDetection
 			{
 				loadFileCheckBox.Checked = false;
 				openFileButton.Enabled = false;
+				detectButton.Text = "Start detection";
+				_detect = false;
 			}
 			if (_capture != null)
 			{
@@ -90,39 +93,20 @@ namespace FaceDetection
 			if (pictureBox.Image == null)
 				return;
 
-			if (!frontalFaceCheckBox.Checked && !profileFaceCheckBox.Checked)
-			{
-				MessageBox.Show("You have to chose any face detection algorithm");
-				return;
-			}
-
 			if (loadFileCheckBox.Checked)
 			{
-				pictureBox.Image = DetectFace.Detect((Mat)pictureBox.Image,frontalFaceCheckBox.Checked, eyesCheckBox.Checked,mouthCheckBox.Checked,noseCheckBox.Checked);
+				pictureBox.Image = DetectFace.Detect((Mat)pictureBox.Image, selectedAlgorithmIndex, eyesCheckBox.Checked,mouthCheckBox.Checked,noseCheckBox.Checked);
 				return;
 			}
 
 			_detect = !_detect;
-			if (_detect)
-			{
-				detectButton.Text = "Stop detection";
-			}
-			else
-			{
-				detectButton.Text = "Start detection";
-			}
+			if(!loadFileCheckBox.Checked)
+				detectButton.Text = _detect ? "Stop detection" : "Start detection";
 		}
 
-		private void frontalFaceCheckBox_CheckedChanged(object sender, EventArgs e)
+		private void algorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (frontalFaceCheckBox.Checked)
-				profileFaceCheckBox.Checked = false;
-		}
-
-		private void profileFaceCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			if (profileFaceCheckBox.Checked)
-				frontalFaceCheckBox.Checked = false;
+			selectedAlgorithmIndex = algorithmComboBox.SelectedIndex;
 		}
 	}
 }

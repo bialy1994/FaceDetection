@@ -6,25 +6,20 @@ using Emgu.CV.Structure;
 
 namespace FaceDetection.Sources
 {
-	class DetectFace
+	internal class DetectFace
 	{
-		private const string FrontalFaceFileName = "Cascades/haarcascade_frontalface_default.xml";
-		private const string ProfilFaceFileName = "Cascades/haarcascade_profil_face.xml";
 		private const string EyeFileName = "Cascades/haarcascade_eye.xml";
 		private const string MouthFileName = "Cascades/haarcascade_mouth.xml";
 		private const string NoseFileName = "Cascades/haarcascade_nose.xml";
 
 
-		public static Mat Detect(Mat image, bool defaultAlgorithm = true, bool detectEyes = false, bool detectMouth = false, bool detectNose = false)
+		public static Mat Detect(Mat image, int selectedAlgorithmIndex, bool detectEyes = false, bool detectMouth = false, bool detectNose = false)
 		{
 			var faces = new List<Rectangle>();
 			var ugray = new UMat();
-			var algorithm = "";
-			if (defaultAlgorithm)
-				algorithm = FrontalFaceFileName;
-			else
-				algorithm = ProfilFaceFileName;
-			using (var face = new CascadeClassifier(algorithm))
+			var fileName = GetFileName(selectedAlgorithmIndex);
+			
+			using (var face = new CascadeClassifier(fileName))
 			{
 				CvInvoke.CvtColor(image, ugray, ColorConversion.Bgr2Gray);
 				CvInvoke.EqualizeHist(ugray, ugray);
@@ -85,6 +80,29 @@ namespace FaceDetection.Sources
 					}
 				}
 			}
+		}
+
+		private static string GetFileName(int index)
+		{
+			/*"Frontal face - default",
+				"Frontal face - Alt",
+				"Frontal face - Alt 2",
+				"Frontal face - Alt tree",
+				"Profile face"*/
+			switch (index)
+			{
+				case 0:
+					return "Cascades\\haarcascade_frontalface_default.xml";
+				case 1:
+					return "Cascades\\haarcascade_frontalface_alt.xml";
+				case 2:
+					return "Cascades\\haarcascade_frontalface_alt2.xml";
+				case 3:
+					return "Cascades\\haarcascade_frontalface_alt_tree.xml";
+				case 4:
+					return "Cascades\\haarcascade_profil_face.xml";
+			}
+			return "";
 		}
 	}
 }

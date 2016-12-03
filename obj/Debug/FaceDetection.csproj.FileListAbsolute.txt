@@ -49,4 +49,6 @@ C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetectio
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.csproj.GenerateResource.Cache
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.exe
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\Example.FaceDetection.pdb
+C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\bin\Example.FaceDetection.exe
+C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\bin\Example.FaceDetection.pdb
 C:\Users\Michał Białuski\Documents\GitHub\FaceDetection\obj\Debug\FaceDetection.csprojResolveAssemblyReference.cache
